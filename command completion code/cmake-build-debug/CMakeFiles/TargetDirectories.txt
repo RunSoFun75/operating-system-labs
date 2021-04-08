@@ -1,3 +1,0 @@
-/home/andrey/operating-system-labs/command completion code/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/andrey/operating-system-labs/command completion code/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/andrey/operating-system-labs/command completion code/cmake-build-debug/CMakeFiles/command_completion_code.dir
