@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/creating_two_processes.dir/main.c.o  -o creating_two_processes 
