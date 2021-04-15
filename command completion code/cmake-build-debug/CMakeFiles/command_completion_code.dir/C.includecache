@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/andrey/GIT/operating-system-labs/command completion code/main.c
+sys/types.h
+-
+stdio.h
+-
+unistd.h
+-
+stdlib.h
+-
+wait.h
+-
+
