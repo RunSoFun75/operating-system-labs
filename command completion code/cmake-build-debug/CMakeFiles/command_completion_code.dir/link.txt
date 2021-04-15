@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/command_completion_code.dir/main.c.o  -o command_completion_code 
+/usr/bin/cc -g CMakeFiles/command_completion_code.dir/main.c.o -o command_completion_code 

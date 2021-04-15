@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/andrey/operating-system-labs/creating two processes/main.c" "/home/andrey/operating-system-labs/creating two processes/cmake-build-debug/CMakeFiles/creating_two_processes.dir/main.c.o"
+  "/home/andrey/GIT/operating-system-labs/creating two processes/main.c" "/home/andrey/GIT/operating-system-labs/creating two processes/cmake-build-debug/CMakeFiles/creating_two_processes.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
