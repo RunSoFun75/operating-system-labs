@@ -1,14 +1,22 @@
+#include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 
-int execvpe (char *file, char *argv[], char *envp[]) {
-	extern char **environ;
-	environ = envp;
-	execvp(file, argv);
-	return -1;
+int execvpe(const char *file, char *argv[], char *envp[]) {
+    for (int i = 0; envp[i] != NULL; ++i) {
+        if(putenv(envp[i]) == -1) {
+            perror("putenv");
+        }
+    }
+    if (execvp(file, argv) == -1) {
+        perror("execvp");
+    }
+    return 0;
 }
 
-int main (int argc, char *argv[], char *envp[]) {
-	execvpe(argv[1], &argv[1], envp);
-	exit (1);
+int main(int argc, char *argv[]) {
+    char *args[] = {"AB", "BC", "CD", "DE", "EF", NULL};
+    char *envp[] = {"A=B", "B=C", "C=D", "D=E"};
+    execvpe("./file", args, envp);
+    return 0;
 }

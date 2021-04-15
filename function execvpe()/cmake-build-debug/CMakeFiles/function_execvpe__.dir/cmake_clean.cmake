@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/function_execvpe__.dir/file.c.o"
   "CMakeFiles/function_execvpe__.dir/main.c.o"
   "function_execvpe__"
   "function_execvpe__.pdb"

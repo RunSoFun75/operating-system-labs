@@ -3,4 +3,4 @@ project(function_execvpe__ C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(function_execvpe__ main.c)
+add_executable(function_execvpe__ main.c file.c)
