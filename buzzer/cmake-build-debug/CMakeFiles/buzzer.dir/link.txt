@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/buzzer.dir/main.c.o -o buzzer 
