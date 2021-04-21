@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/answer_without_entering_a_new_line.dir/main.c.o -o answer_without_entering_a_new_line 

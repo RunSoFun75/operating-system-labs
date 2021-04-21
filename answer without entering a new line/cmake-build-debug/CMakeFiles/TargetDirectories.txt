@@ -1,0 +1,3 @@
+/home/andrey/GIT/operating-system-labs/answer without entering a new line/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/andrey/GIT/operating-system-labs/answer without entering a new line/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/andrey/GIT/operating-system-labs/answer without entering a new line/cmake-build-debug/CMakeFiles/answer_without_entering_a_new_line.dir
