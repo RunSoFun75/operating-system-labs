@@ -1,45 +1,72 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <string.h>
+#include <sys/types.h>
+#include <unistd.h>
 #include <termios.h>
 #include <fcntl.h>
 
-int main(int argc, char *argv[]) {
-    struct termios save;
-    struct termios tty;
-
-    int fd = open("/dev/tty", O_RDONLY);
-    char ch;
-
-    if (!isatty(fd)) {
-        exit(1);
+int setAttrs(int desc, struct termios oldAttrs) {
+    oldAttrs.c_lflag &= ~(ICANON);
+    oldAttrs.c_cc[VMIN] = 1;
+    oldAttrs.c_cc[VTIME] = 0;
+    if (tcsetattr(desc, TCSANOW, &oldAttrs) == -1) {
+        perror("tcsetattr failed");
+        return -1;
     }
-
-    tcgetattr(fd, &tty);
-    save = tty;
-    tty.c_cflag &= ~(ICANON|ISIG);
-    tty.c_cc[VMIN] = 1;
-    tcsetattr(fd, 0, &tty);
-    char q[3][100];
-    strcpy(q[0], "print n [y/n]");
-    strcpy(q[1], "print n [y/n]");
-    strcpy(q[2], "print y [y/n]");
-    char answer[3] = {'n', 'n', 'y'};
-    int i = 0;
-    for (int i = 0; i < 3; ++i) {
-        puts(q[i]);
-        read(fd, &ch, 1);
-        if (ch == answer[i]) {
-            puts("\nCorrect!");
-        } else if (ch == 'n' || ch == 'y') {
-            puts("\nNot a correct answer!");
-        } else if (ch == 'q') {
-            break;
-        } else {
-            puts("\nNot a correct sym");
-        }
-    }
-    tcsetattr(fd, 0, &save);
     return 0;
+}
+
+int ask(int desc) {
+    char *askLine = "Do you write symbol here?";
+    char inputSymbols[1];
+    if (write(desc, askLine, strlen(askLine)) == -1) {
+        perror("write failed");
+        return -1;
+    } else if (read(desc, inputSymbols, 1) == -1) {
+        perror("read failed");
+        return -1;
+    } else if (write(desc, "\n", 1) == -1) {
+        perror("write failed");
+        return -1;
+    } else if (write(desc, inputSymbols, 1) == -1) {
+        perror("write failed");
+        return -1;
+    }
+    return 0;
+}
+
+int main(int argc, char *argv[]) {
+    int desc = open("/dev/tty", O_RDWR);
+        if (desc == -1) {
+            perror("open failed");
+            return -1;
+        }
+
+    if (isatty(desc) == 0) {
+        perror("not terminal opened");
+        close(desc);
+        return -1;
+    }
+
+    struct termios oldAttrs;
+    if (tcgetattr(desc, &oldAttrs) == -1) {
+        perror("tcgetattr failed");
+        close(desc);
+        return -1;
+    }
+
+    if (setAttrs(desc, oldAttrs) == -1) {
+        close(desc);
+        return -1;
+    }
+
+    int askReturnValue = ask(desc);
+    if (tcsetattr(desc, TCSANOW, &oldAttrs) == -1) {
+        perror("tcsetattr failed");
+        close(desc);
+        return -1;
+    }
+    close(desc);
+    return askReturnValue;
 }
