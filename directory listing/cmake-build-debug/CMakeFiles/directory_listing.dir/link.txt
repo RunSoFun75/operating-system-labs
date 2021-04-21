@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/directory_listing.dir/main.c.o -o directory_listing 
