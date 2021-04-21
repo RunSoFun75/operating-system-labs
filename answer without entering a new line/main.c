@@ -29,7 +29,10 @@ int ask(int desc) {
     } else if (write(desc, "\n", 1) == -1) {
         perror("write failed");
         return -1;
-    } else if (write(desc, inputSymbols, 1) == -1) {
+    } else if (write(desc, "Good Answer!", 12) == -1) {
+        perror("write failed");
+        return -1;
+    } else if (write(desc, "\n", 1) == -1) {
         perror("write failed");
         return -1;
     }
