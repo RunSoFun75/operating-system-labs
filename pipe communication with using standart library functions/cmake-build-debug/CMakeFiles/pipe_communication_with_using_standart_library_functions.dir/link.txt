@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/pipe_communication_with_using_standart_library_functions.dir/main.c.o -o pipe_communication_with_using_standart_library_functions 
