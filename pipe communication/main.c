@@ -1,37 +1,45 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-#include <sys/types.h>
 #include <unistd.h>
 #include <ctype.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+
 
 int main(int argc, char *argv[]) {
-    int pid, i, rtn;
-    int fd[2];
-    static char *lines = {"ThIsIsOrIgInAlTeXt\n"};
-    char input[1000];
-    if (pipe(fd) == -1) {
-        perror(argv[0]);
-        exit(1);
+    int buffer;
+    int pipefd[2];
+    char input[BUFSIZ] = "";
+    char output[BUFSIZ] = "";
+
+    if (pipe(pipefd) == -1) {
+        perror("pipe create");
+        return 1;
     }
-    if ((pid = fork()) > 0) {
-        close(fd[0]);
-        write(fd[1], lines, strlen(lines));
-        close(fd[1]);
-    } else if (pid == 0) {
-        close(fd[1]);
-        while ((rtn = read(fd[0], input, 1000)) > 0) {
-            for (i = 0; i < rtn; i++) {
-                if (islower(input[i])) {
-                    input[i] = toupper(input[i]);
-                }
-            }
-            write(1, input, rtn);
+
+    if (fork() == 0) {
+        close(pipefd[0]);
+        while ((buffer = read(0, input, BUFSIZ)) != 0) {
+            write(pipefd[1], input, buffer);
+            input[0] = '\0';
         }
-        close(fd[0]);
-    } else {
-        perror(argv[0]);
-        exit(2);
+        close(pipefd[1]);
+        return 0;
     }
+    if (fork() == 0) {
+        close(pipefd[1]);
+        while ((buffer = read(pipefd[0], output, BUFSIZ)) != 0) {
+            for (int i = 0; i < buffer; ++i) {
+                printf("%c", toupper(output[i]));
+            }
+            output[0] = '\0';
+        }
+        close(pipefd[0]);
+        return 0;
+    }
+    close(pipefd[0]);
+    close(pipefd[1]);
+    wait(NULL);
+    wait(NULL);
     return 0;
 }
