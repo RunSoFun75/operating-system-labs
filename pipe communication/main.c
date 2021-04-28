@@ -39,7 +39,9 @@ int main(int argc, char *argv[]) {
     }
     close(pipefd[0]);
     close(pipefd[1]);
-    wait(NULL);
-    wait(NULL);
+    int ret = 0;
+    while (ret != -1) { // wait childs
+        ret = wait(NULL);
+    }
     return 0;
 }
