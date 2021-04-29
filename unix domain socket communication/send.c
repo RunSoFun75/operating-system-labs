@@ -26,6 +26,5 @@ int main(int argc, char *argv[]) {
             exit(3);
         }
     }
-    printf("sfgdfgfdg");
     return 0;
 }
