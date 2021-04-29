@@ -5,7 +5,6 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
-
 int main(int argc, char *argv[]) {
     int buffer, pid;
     int pipefd[2];
