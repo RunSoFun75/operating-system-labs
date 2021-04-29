@@ -7,7 +7,7 @@
 
 
 int main(int argc, char *argv[]) {
-    int buffer;
+    int buffer, pid;
     int pipefd[2];
     char input[BUFSIZ] = "";
     char output[BUFSIZ] = "";
@@ -17,7 +17,7 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    if (fork() == 0) {
+    if ((pid = fork()) == 0) {
         close(pipefd[0]);
         while ((buffer = read(0, input, BUFSIZ)) != 0) {
             write(pipefd[1], input, buffer);
@@ -25,8 +25,7 @@ int main(int argc, char *argv[]) {
         }
         close(pipefd[1]);
         return 0;
-    }
-    if (fork() == 0) {
+    } else if (pid > 0){
         close(pipefd[1]);
         while ((buffer = read(pipefd[0], output, BUFSIZ)) != 0) {
             for (int i = 0; i < buffer; ++i) {
@@ -34,13 +33,14 @@ int main(int argc, char *argv[]) {
             }
             output[0] = '\0';
         }
-        close(pipefd[0]);
-        return 0;
+    } else {
+        perror("cannot fork");
+        return 2;
     }
+
     close(pipefd[0]);
-    close(pipefd[1]);
     int ret = 0;
-    while (ret != -1) { // wait childs
+    while (ret != -1) { // wait child
         ret = wait(NULL);
     }
     return 0;
