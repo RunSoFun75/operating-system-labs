@@ -19,7 +19,6 @@ int main(int argc, char *argv[]) {
         perror("can't msgget");
         exit(1);
     }
-
     while (fgets(message_buf.mtext, MSGSZ, stdin) != NULL) {
         if (msgsnd(msg_fd, &message_buf, MSGSZ, 0) == -1) {
             perror("can't send");

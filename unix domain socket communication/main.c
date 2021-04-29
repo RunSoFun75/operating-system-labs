@@ -21,7 +21,6 @@ struct message_buf {
 
 int main(int argc, char *argv[]) {
     int msg_fd = msgget((int) getuid(), 0);
-
     while (1) {
         if (msgrcv(msg_fd, &message_buf, MSGSZ, 1L, 0) == -1) {
             perror("can't recv");
