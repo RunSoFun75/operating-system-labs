@@ -9,7 +9,7 @@ int main(int argc, char *argv[]) {
     if (fork() == 0) {
         execvp(argv[1], &argv[1]);
         perror(argv[1]);
-        exit(128);
+        exit(127);
     }
     int ret = 0;
     while (ret != -1) {
