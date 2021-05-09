@@ -1,9 +1,9 @@
-#include <sys/types.h>
 #include <stdio.h>
-#include <unistd.h>
 #include <stdlib.h>
-#include <wait.h>
 #include <signal.h>
+#include <unistd.h>
+#include <wait.h>
+#include <sys/types.h>
 
 int main(int argc, char *argv[]) {
     pid_t pid, ret;
@@ -22,7 +22,12 @@ int main(int argc, char *argv[]) {
     else {
         printf("parent: waiting for child: %ld\n", pid);
     }
-    ret = wait(&status);
+
+    int ret = 0;
+    while (ret != -1) {
+        ret = wait(&status); // wait child
+    }
+
     printf("parent: wait's return value: %ld,", ret);
     printf("child's status: %d\n", WEXITSTATUS(status));
     exit(0);
