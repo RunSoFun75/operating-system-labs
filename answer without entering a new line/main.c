@@ -45,34 +45,34 @@ int ask(int desc) {
 
 int main(int argc, char *argv[]) {
     int desc = open("/dev/tty", O_RDWR);
-        if (desc == -1) {
-            perror("open failed");
-            return -1;
-        }
+    if (desc == -1) {
+        perror("open failed");
+        exit(1);
+    }
 
     if (isatty(desc) == 0) {
         perror("not terminal opened");
         close(desc);
-        return -1;
+        exit(2);
     }
 
     struct termios oldAttrs;
     if (tcgetattr(desc, &oldAttrs) == -1) {
         perror("tcgetattr failed");
         close(desc);
-        return -1;
+        exit(2);
     }
 
     if (setAttrs(desc, oldAttrs) == -1) {
         close(desc);
-        return -1;
+        exit(2);
     }
 
     int askReturnValue = ask(desc);
     if (tcsetattr(desc, TCSANOW, &oldAttrs) == -1) {
         perror("tcsetattr failed");
         close(desc);
-        return -1;
+        exit(2);
     }
     close(desc);
     return askReturnValue;

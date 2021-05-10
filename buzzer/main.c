@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <signal.h>
+
 #define BEL '\007'
 
 int sounds = 0;
