@@ -14,11 +14,7 @@ struct message_buf {
 } message_buf = {1L, "\0"};
 
 int main(int argc, char *argv[]) {
-    int msg_fd;
-    if ((msg_fd = msgget((int) getuid(), IPC_CREAT | 0640)) == -1) {
-        perror("can't msgget");
-        exit(1);
-    }
+    int msg_fd = msgget((int) getuid(), 0);
     while (fgets(message_buf.mtext, MSGSZ, stdin) != NULL) {
         if (msgsnd(msg_fd, &message_buf, MSGSZ, 0) == -1) {
             perror("can't send");

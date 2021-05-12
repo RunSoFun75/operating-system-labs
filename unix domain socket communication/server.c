@@ -21,7 +21,11 @@ struct message_buf {
 } message_buf;
 
 int main(int argc, char *argv[]) {
-    int msg_fd = msgget((int) getuid(), 0);
+    int msg_fd;
+    if ((msg_fd = msgget((int) getuid(), IPC_CREAT | 0640)) == -1) {
+        perror("can't msgget");
+        exit(1);
+    }
     while (1) {
         if (msgrcv(msg_fd, &message_buf, MSGSZ, 1L, 0) == -1) {
             perror("can't recv");
