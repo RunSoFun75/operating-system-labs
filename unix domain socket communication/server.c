@@ -1,6 +1,6 @@
 /*
- * This lab needs to run two compiled files main (receive), send,
- * you need to run main and then run send from two processes,
+ * This lab needs to run two compiled files server, client,
+ * you need to run server and then run client from two processes,
  * processes are stopped by a signal CTRL + C (SIGINT)
  */
 
