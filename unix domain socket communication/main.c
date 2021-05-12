@@ -1,3 +1,9 @@
+/*
+ * This lab needs to run two compiled files main (receive), send,
+ * you need to run main and then run send from two processes,
+ * processes are stopped by a signal CTRL + C (SIGINT)
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -8,11 +14,6 @@
 #include <ctype.h>
 
 #define MSGSZ 128
-
-/*
- * This lab needs to run two compiled files main (receive), send
- * processes are stopped by a signal CTRL + C
- */
 
 struct message_buf {
     long mtype;
