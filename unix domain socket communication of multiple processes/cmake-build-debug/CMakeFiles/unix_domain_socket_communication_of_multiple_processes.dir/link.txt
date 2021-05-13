@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/unix_domain_socket_communication_of_multiple_processes.dir/server.c.o CMakeFiles/unix_domain_socket_communication_of_multiple_processes.dir/client.c.o -o unix_domain_socket_communication_of_multiple_processes 
