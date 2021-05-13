@@ -50,7 +50,7 @@ int main(int argc, char* argv[]) {
 
     strncpy(addr.sun_path, SERVER_SOCKET, sizeof(addr.sun_path));
 
-    if (connect(sockfd, cast_addr, sizeof(addr))) {
+    if (connect(sockfd, cast_addr, sizeof(addr)) == -1) {
         perror("connect");
         close(sockfd);
         exit(1);
