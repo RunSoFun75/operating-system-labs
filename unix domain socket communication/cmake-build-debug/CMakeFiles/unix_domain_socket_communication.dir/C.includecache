@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/andrey/GIT/operating-system-labs-1/unix domain socket communication/client.c
+
+/home/andrey/GIT/operating-system-labs-1/unix domain socket communication/server.c
+stdio.h
+-
+

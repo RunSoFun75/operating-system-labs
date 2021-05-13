@@ -1,0 +1,3 @@
+/home/andrey/GIT/operating-system-labs-1/unix domain socket communication/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/andrey/GIT/operating-system-labs-1/unix domain socket communication/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/andrey/GIT/operating-system-labs-1/unix domain socket communication/cmake-build-debug/CMakeFiles/unix_domain_socket_communication.dir

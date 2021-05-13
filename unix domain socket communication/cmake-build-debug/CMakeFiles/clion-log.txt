@@ -1,0 +1,4 @@
+/snap/clion/151/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/home/andrey/GIT/operating-system-labs-1/unix domain socket communication"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/andrey/GIT/operating-system-labs-1/unix domain socket communication/cmake-build-debug
