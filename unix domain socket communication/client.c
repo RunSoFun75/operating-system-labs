@@ -14,8 +14,7 @@ void writeFile(int fd, const char* filename) {
         perror("open");
         return;
     }
-
-    char* buf;
+    char *buf;
     if ((buf = malloc(BUFSIZ * sizeof(char))) == NULL) {
         perror("malloc returns NULL");
         exit(1);
