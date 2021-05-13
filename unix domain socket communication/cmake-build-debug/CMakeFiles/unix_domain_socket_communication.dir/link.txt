@@ -1,1 +1,0 @@
-/usr/bin/cc -g CMakeFiles/unix_domain_socket_communication.dir/main.c.o -o unix_domain_socket_communication 
