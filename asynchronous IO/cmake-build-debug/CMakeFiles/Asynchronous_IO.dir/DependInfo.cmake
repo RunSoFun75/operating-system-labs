@@ -5,7 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/home/andrey/GIT/operating-system-labs-1/Asynchronous IO/client.c" "/home/andrey/GIT/operating-system-labs-1/Asynchronous IO/cmake-build-debug/CMakeFiles/Asynchronous_IO.dir/client.c.o"
-  "/home/andrey/GIT/operating-system-labs-1/Asynchronous IO/main.c" "/home/andrey/GIT/operating-system-labs-1/Asynchronous IO/cmake-build-debug/CMakeFiles/Asynchronous_IO.dir/main.c.o"
+  "/home/andrey/GIT/operating-system-labs-1/Asynchronous IO/server.c" "/home/andrey/GIT/operating-system-labs-1/Asynchronous IO/cmake-build-debug/CMakeFiles/Asynchronous_IO.dir/server.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

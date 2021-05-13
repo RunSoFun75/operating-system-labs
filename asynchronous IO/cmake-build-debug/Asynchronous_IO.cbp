@@ -79,7 +79,7 @@
 		<Unit filename="/home/andrey/GIT/operating-system-labs-1/Asynchronous IO/client.c">
 			<Option target="Asynchronous_IO"/>
 		</Unit>
-		<Unit filename="/home/andrey/GIT/operating-system-labs-1/Asynchronous IO/main.c">
+		<Unit filename="/home/andrey/GIT/operating-system-labs-1/Asynchronous IO/server.c">
 			<Option target="Asynchronous_IO"/>
 		</Unit>
 		<Unit filename="/home/andrey/GIT/operating-system-labs-1/Asynchronous IO/CMakeLists.txt">

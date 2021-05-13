@@ -169,32 +169,32 @@ client.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asynchronous_IO.dir/build.make CMakeFiles/Asynchronous_IO.dir/client.c.s
 .PHONY : client.c.s
 
-main.o: main.c.o
+server.o: server.c.o
 
-.PHONY : main.o
+.PHONY : server.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asynchronous_IO.dir/build.make CMakeFiles/Asynchronous_IO.dir/main.c.o
-.PHONY : main.c.o
+server.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asynchronous_IO.dir/build.make CMakeFiles/Asynchronous_IO.dir/server.c.o
+.PHONY : server.c.o
 
-main.i: main.c.i
+server.i: server.c.i
 
-.PHONY : main.i
+.PHONY : server.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asynchronous_IO.dir/build.make CMakeFiles/Asynchronous_IO.dir/main.c.i
-.PHONY : main.c.i
+server.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asynchronous_IO.dir/build.make CMakeFiles/Asynchronous_IO.dir/server.c.i
+.PHONY : server.c.i
 
-main.s: main.c.s
+server.s: server.c.s
 
-.PHONY : main.s
+.PHONY : server.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asynchronous_IO.dir/build.make CMakeFiles/Asynchronous_IO.dir/main.c.s
-.PHONY : main.c.s
+server.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asynchronous_IO.dir/build.make CMakeFiles/Asynchronous_IO.dir/server.c.s
+.PHONY : server.c.s
 
 # Help Target
 help:
@@ -208,9 +208,9 @@ help:
 	@echo "... client.o"
 	@echo "... client.i"
 	@echo "... client.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... server.o"
+	@echo "... server.i"
+	@echo "... server.s"
 .PHONY : help
 
 

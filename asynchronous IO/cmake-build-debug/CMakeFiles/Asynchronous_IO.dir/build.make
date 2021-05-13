@@ -76,18 +76,18 @@ include CMakeFiles/Asynchronous_IO.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Asynchronous_IO.dir/flags.make
 
-CMakeFiles/Asynchronous_IO.dir/main.c.o: CMakeFiles/Asynchronous_IO.dir/flags.make
-CMakeFiles/Asynchronous_IO.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/andrey/GIT/operating-system-labs-1/Asynchronous IO/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Asynchronous_IO.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Asynchronous_IO.dir/main.c.o -c "/home/andrey/GIT/operating-system-labs-1/Asynchronous IO/main.c"
+CMakeFiles/Asynchronous_IO.dir/server.c.o: CMakeFiles/Asynchronous_IO.dir/flags.make
+CMakeFiles/Asynchronous_IO.dir/server.c.o: ../server.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/andrey/GIT/operating-system-labs-1/Asynchronous IO/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Asynchronous_IO.dir/server.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Asynchronous_IO.dir/server.c.o -c "/home/andrey/GIT/operating-system-labs-1/Asynchronous IO/server.c"
 
-CMakeFiles/Asynchronous_IO.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Asynchronous_IO.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/home/andrey/GIT/operating-system-labs-1/Asynchronous IO/main.c" > CMakeFiles/Asynchronous_IO.dir/main.c.i
+CMakeFiles/Asynchronous_IO.dir/server.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Asynchronous_IO.dir/server.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/home/andrey/GIT/operating-system-labs-1/Asynchronous IO/server.c" > CMakeFiles/Asynchronous_IO.dir/server.c.i
 
-CMakeFiles/Asynchronous_IO.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Asynchronous_IO.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/home/andrey/GIT/operating-system-labs-1/Asynchronous IO/main.c" -o CMakeFiles/Asynchronous_IO.dir/main.c.s
+CMakeFiles/Asynchronous_IO.dir/server.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Asynchronous_IO.dir/server.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/home/andrey/GIT/operating-system-labs-1/Asynchronous IO/server.c" -o CMakeFiles/Asynchronous_IO.dir/server.c.s
 
 CMakeFiles/Asynchronous_IO.dir/client.c.o: CMakeFiles/Asynchronous_IO.dir/flags.make
 CMakeFiles/Asynchronous_IO.dir/client.c.o: ../client.c
@@ -104,13 +104,13 @@ CMakeFiles/Asynchronous_IO.dir/client.c.s: cmake_force
 
 # Object files for target Asynchronous_IO
 Asynchronous_IO_OBJECTS = \
-"CMakeFiles/Asynchronous_IO.dir/main.c.o" \
+"CMakeFiles/Asynchronous_IO.dir/server.c.o" \
 "CMakeFiles/Asynchronous_IO.dir/client.c.o"
 
 # External object files for target Asynchronous_IO
 Asynchronous_IO_EXTERNAL_OBJECTS =
 
-Asynchronous_IO: CMakeFiles/Asynchronous_IO.dir/main.c.o
+Asynchronous_IO: CMakeFiles/Asynchronous_IO.dir/server.c.o
 Asynchronous_IO: CMakeFiles/Asynchronous_IO.dir/client.c.o
 Asynchronous_IO: CMakeFiles/Asynchronous_IO.dir/build.make
 Asynchronous_IO: CMakeFiles/Asynchronous_IO.dir/link.txt

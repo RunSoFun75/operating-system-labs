@@ -2,7 +2,7 @@ file(REMOVE_RECURSE
   "Asynchronous_IO"
   "Asynchronous_IO.pdb"
   "CMakeFiles/Asynchronous_IO.dir/client.c.o"
-  "CMakeFiles/Asynchronous_IO.dir/main.c.o"
+  "CMakeFiles/Asynchronous_IO.dir/server.c.o"
 )
 
 # Per-language clean rules from dependency scanning.
