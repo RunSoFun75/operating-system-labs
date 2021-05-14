@@ -7,8 +7,6 @@
 #include <sys/time.h>
 #include <poll.h>
 
-#define BUFSIZE 257
-
 void createArrayOffsets(int fd, long *fileOffsets, int *lineLength) {
     int i = 1, j = 0;
     char c;
@@ -29,7 +27,7 @@ int main(int argc, char *argv[]) {
     long fileOffsets[101];
     int fd1, fd2, lineNumber, bufSize = 257, lineLength[101] = {-1};
     char *buf, symbol;
-    if ((buf = (char *) malloc(257 * sizeof(char))) == NULL) {
+    if ((buf = (char *) malloc(BUFSIZ * sizeof(char))) == NULL) {
         perror("malloc returns NULL");
         exit(1);
     }
@@ -56,12 +54,12 @@ int main(int argc, char *argv[]) {
         } else if (ret == 0) {
             int i = 0;
             lseek(fd2, 0, SEEK_SET);
-            while ((i = read(fd2, buf, BUFSIZE)) > 0) {
+            while ((i = read(fd2, buf, BUFSIZ)) > 0) {
                 write(1, buf, i);
             }
             exit(0);
         } else {
-            symbol = read(fd1, buf, BUFSIZE);
+            symbol = read(fd1, buf, BUFSIZ);
             buf[symbol] = '\0';
             lineNumber = atoi(buf);
             if (lineNumber == 0) {
