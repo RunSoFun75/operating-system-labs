@@ -26,10 +26,6 @@ int main(int argc, char *argv[]) {
         }
         printf("\n");
     }
-
-    if (p2close(fp) == -1) {
-        perror("Error close pipe");
-        return 1;
-    }
+    fclose(fp[1]);
     return 0;
 }
