@@ -1,0 +1,3 @@
+/home/andrey/GIT/operating-system-labs-1/protected text editor/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/andrey/GIT/operating-system-labs-1/protected text editor/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/andrey/GIT/operating-system-labs-1/protected text editor/cmake-build-debug/CMakeFiles/protected_text_editor.dir

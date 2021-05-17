@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/protected_text_editor.dir/main.c.o -o protected_text_editor 
