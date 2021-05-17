@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/list_of_strings.dir/main.c.o -o list_of_strings 
