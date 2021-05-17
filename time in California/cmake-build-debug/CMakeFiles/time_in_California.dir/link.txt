@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/time_in_California.dir/main.c.o -o time_in_California 
