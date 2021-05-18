@@ -1,0 +1,3 @@
+/home/andrey/GIT/operating-system-labs-1/pseudo multithreaded HTTP client/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/andrey/GIT/operating-system-labs-1/pseudo multithreaded HTTP client/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/andrey/GIT/operating-system-labs-1/pseudo multithreaded HTTP client/cmake-build-debug/CMakeFiles/pseudo_multithreaded_HTTP_client.dir
