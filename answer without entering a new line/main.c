@@ -11,36 +11,34 @@ int setAttrs(int desc, struct termios oldAttrs) {
     oldAttrs.c_cc[VMIN] = 1;
     oldAttrs.c_cc[VTIME] = 0;
     if (tcsetattr(desc, TCSANOW, &oldAttrs) == -1) {
-        perror("tcsetattr failed");
         return -1;
     }
     return 0;
 }
 
-int ask(int desc) {
+void ask(int desc) {
     char *askLine = "Do you write symbol here?";
     char inputSymbols[1];
     if (write(desc, askLine, strlen(askLine)) == -1) {
         perror("write failed");
-        return -1;
+        exit(1);
     }
     if (read(desc, inputSymbols, 1) == -1) {
         perror("read failed");
-        return -1;
+        exit(1);
     }
     if (write(desc, "\n", 1) == -1) {
         perror("write failed");
-        return -1;
+        exit(1);
     }
     if (write(desc, "Good Answer!", 12) == -1) {
         perror("write failed");
-        return -1;
+        exit(1);
     }
     if (write(desc, "\n", 1) == -1) {
         perror("write failed");
-        return -1;
+        exit(1);
     }
-    return 0;
 }
 
 int main(int argc, char *argv[]) {
@@ -48,12 +46,6 @@ int main(int argc, char *argv[]) {
     if (desc == -1) {
         perror("open failed");
         exit(1);
-    }
-
-    if (isatty(desc) == 0) {
-        perror("not terminal opened");
-        close(desc);
-        exit(2);
     }
 
     struct termios oldAttrs;
@@ -65,15 +57,16 @@ int main(int argc, char *argv[]) {
 
     if (setAttrs(desc, oldAttrs) == -1) {
         close(desc);
+        perror("tcsetattr failed");
         exit(2);
     }
 
-    int askReturnValue = ask(desc);
+    ask(desc);
     if (tcsetattr(desc, TCSANOW, &oldAttrs) == -1) {
         perror("tcsetattr failed");
         close(desc);
         exit(2);
     }
     close(desc);
-    return askReturnValue;
+    return 0;
 }
