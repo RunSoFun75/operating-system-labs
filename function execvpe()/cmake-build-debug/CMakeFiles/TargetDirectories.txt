@@ -1,3 +1,3 @@
-/home/andrey/GIT/operating-system-labs/function execvpe()/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/andrey/GIT/operating-system-labs/function execvpe()/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/andrey/GIT/operating-system-labs/function execvpe()/cmake-build-debug/CMakeFiles/function_execvpe__.dir
+/home/andrey/GIT/operating-system-labs-1/function execvpe()/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/andrey/GIT/operating-system-labs-1/function execvpe()/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/andrey/GIT/operating-system-labs-1/function execvpe()/cmake-build-debug/CMakeFiles/function_execvpe__.dir

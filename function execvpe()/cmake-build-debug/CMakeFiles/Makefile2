@@ -54,19 +54,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/149/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/151/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/149/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/151/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/andrey/GIT/operating-system-labs/function execvpe()"
+CMAKE_SOURCE_DIR = "/home/andrey/GIT/operating-system-labs-1/function execvpe()"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/andrey/GIT/operating-system-labs/function execvpe()/cmake-build-debug"
+CMAKE_BINARY_DIR = "/home/andrey/GIT/operating-system-labs-1/function execvpe()/cmake-build-debug"
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -93,14 +93,14 @@ clean: CMakeFiles/function_execvpe__.dir/clean
 CMakeFiles/function_execvpe__.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/function_execvpe__.dir/build.make CMakeFiles/function_execvpe__.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/function_execvpe__.dir/build.make CMakeFiles/function_execvpe__.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/andrey/GIT/operating-system-labs/function execvpe()/cmake-build-debug/CMakeFiles" --progress-num=1,2,3 "Built target function_execvpe__"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/andrey/GIT/operating-system-labs-1/function execvpe()/cmake-build-debug/CMakeFiles" --progress-num=1,2,3 "Built target function_execvpe__"
 .PHONY : CMakeFiles/function_execvpe__.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/function_execvpe__.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/andrey/GIT/operating-system-labs/function execvpe()/cmake-build-debug/CMakeFiles" 3
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/andrey/GIT/operating-system-labs-1/function execvpe()/cmake-build-debug/CMakeFiles" 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/function_execvpe__.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/andrey/GIT/operating-system-labs/function execvpe()/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/andrey/GIT/operating-system-labs-1/function execvpe()/cmake-build-debug/CMakeFiles" 0
 .PHONY : CMakeFiles/function_execvpe__.dir/rule
 
 # Convenience name for target.

@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/andrey/GIT/operating-system-labs/function execvpe()/file.c" "/home/andrey/GIT/operating-system-labs/function execvpe()/cmake-build-debug/CMakeFiles/function_execvpe__.dir/file.c.o"
-  "/home/andrey/GIT/operating-system-labs/function execvpe()/main.c" "/home/andrey/GIT/operating-system-labs/function execvpe()/cmake-build-debug/CMakeFiles/function_execvpe__.dir/main.c.o"
+  "/home/andrey/GIT/operating-system-labs-1/function execvpe()/file.c" "/home/andrey/GIT/operating-system-labs-1/function execvpe()/cmake-build-debug/CMakeFiles/function_execvpe__.dir/file.c.o"
+  "/home/andrey/GIT/operating-system-labs-1/function execvpe()/main.c" "/home/andrey/GIT/operating-system-labs-1/function execvpe()/cmake-build-debug/CMakeFiles/function_execvpe__.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

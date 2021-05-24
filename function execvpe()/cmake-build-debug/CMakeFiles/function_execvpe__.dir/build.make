@@ -53,19 +53,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/149/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/151/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/149/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/151/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/andrey/GIT/operating-system-labs/function execvpe()"
+CMAKE_SOURCE_DIR = "/home/andrey/GIT/operating-system-labs-1/function execvpe()"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/andrey/GIT/operating-system-labs/function execvpe()/cmake-build-debug"
+CMAKE_BINARY_DIR = "/home/andrey/GIT/operating-system-labs-1/function execvpe()/cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/function_execvpe__.dir/depend.make
@@ -78,29 +78,29 @@ include CMakeFiles/function_execvpe__.dir/flags.make
 
 CMakeFiles/function_execvpe__.dir/main.c.o: CMakeFiles/function_execvpe__.dir/flags.make
 CMakeFiles/function_execvpe__.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/andrey/GIT/operating-system-labs/function execvpe()/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/function_execvpe__.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/function_execvpe__.dir/main.c.o -c "/home/andrey/GIT/operating-system-labs/function execvpe()/main.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/andrey/GIT/operating-system-labs-1/function execvpe()/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/function_execvpe__.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/function_execvpe__.dir/main.c.o -c "/home/andrey/GIT/operating-system-labs-1/function execvpe()/main.c"
 
 CMakeFiles/function_execvpe__.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/function_execvpe__.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/home/andrey/GIT/operating-system-labs/function execvpe()/main.c" > CMakeFiles/function_execvpe__.dir/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/home/andrey/GIT/operating-system-labs-1/function execvpe()/main.c" > CMakeFiles/function_execvpe__.dir/main.c.i
 
 CMakeFiles/function_execvpe__.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/function_execvpe__.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/home/andrey/GIT/operating-system-labs/function execvpe()/main.c" -o CMakeFiles/function_execvpe__.dir/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/home/andrey/GIT/operating-system-labs-1/function execvpe()/main.c" -o CMakeFiles/function_execvpe__.dir/main.c.s
 
 CMakeFiles/function_execvpe__.dir/file.c.o: CMakeFiles/function_execvpe__.dir/flags.make
 CMakeFiles/function_execvpe__.dir/file.c.o: ../file.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/andrey/GIT/operating-system-labs/function execvpe()/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/function_execvpe__.dir/file.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/function_execvpe__.dir/file.c.o -c "/home/andrey/GIT/operating-system-labs/function execvpe()/file.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/andrey/GIT/operating-system-labs-1/function execvpe()/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/function_execvpe__.dir/file.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/function_execvpe__.dir/file.c.o -c "/home/andrey/GIT/operating-system-labs-1/function execvpe()/file.c"
 
 CMakeFiles/function_execvpe__.dir/file.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/function_execvpe__.dir/file.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/home/andrey/GIT/operating-system-labs/function execvpe()/file.c" > CMakeFiles/function_execvpe__.dir/file.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/home/andrey/GIT/operating-system-labs-1/function execvpe()/file.c" > CMakeFiles/function_execvpe__.dir/file.c.i
 
 CMakeFiles/function_execvpe__.dir/file.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/function_execvpe__.dir/file.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/home/andrey/GIT/operating-system-labs/function execvpe()/file.c" -o CMakeFiles/function_execvpe__.dir/file.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/home/andrey/GIT/operating-system-labs-1/function execvpe()/file.c" -o CMakeFiles/function_execvpe__.dir/file.c.s
 
 # Object files for target function_execvpe__
 function_execvpe___OBJECTS = \
@@ -114,7 +114,7 @@ function_execvpe__: CMakeFiles/function_execvpe__.dir/main.c.o
 function_execvpe__: CMakeFiles/function_execvpe__.dir/file.c.o
 function_execvpe__: CMakeFiles/function_execvpe__.dir/build.make
 function_execvpe__: CMakeFiles/function_execvpe__.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/andrey/GIT/operating-system-labs/function execvpe()/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable function_execvpe__"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/andrey/GIT/operating-system-labs-1/function execvpe()/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable function_execvpe__"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/function_execvpe__.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -127,6 +127,6 @@ CMakeFiles/function_execvpe__.dir/clean:
 .PHONY : CMakeFiles/function_execvpe__.dir/clean
 
 CMakeFiles/function_execvpe__.dir/depend:
-	cd "/home/andrey/GIT/operating-system-labs/function execvpe()/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/andrey/GIT/operating-system-labs/function execvpe()" "/home/andrey/GIT/operating-system-labs/function execvpe()" "/home/andrey/GIT/operating-system-labs/function execvpe()/cmake-build-debug" "/home/andrey/GIT/operating-system-labs/function execvpe()/cmake-build-debug" "/home/andrey/GIT/operating-system-labs/function execvpe()/cmake-build-debug/CMakeFiles/function_execvpe__.dir/DependInfo.cmake" --color=$(COLOR)
+	cd "/home/andrey/GIT/operating-system-labs-1/function execvpe()/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/andrey/GIT/operating-system-labs-1/function execvpe()" "/home/andrey/GIT/operating-system-labs-1/function execvpe()" "/home/andrey/GIT/operating-system-labs-1/function execvpe()/cmake-build-debug" "/home/andrey/GIT/operating-system-labs-1/function execvpe()/cmake-build-debug" "/home/andrey/GIT/operating-system-labs-1/function execvpe()/cmake-build-debug/CMakeFiles/function_execvpe__.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/function_execvpe__.dir/depend
 

@@ -15,8 +15,8 @@ int execvpe(const char *file, char *argv[], char *envp[]) {
 }
 
 int main(int argc, char *argv[]) {
-    char *args[] = {"AB", "BC", "CD", "DE", "EF", NULL};
+    char *args[] = {"argv[1]", "argv[2]", "argv[3]", "argv[3]", "argv[4]", NULL};
     char *envp[] = {"A=B", "B=C", "C=D", "D=E"};
-    execvpe("./file", args, envp);
+    execvpe("./writeVariables", args, envp);
     return 0;
 }
