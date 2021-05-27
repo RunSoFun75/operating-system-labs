@@ -1,23 +1,21 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 #include <sys/socket.h>
 #include <netdb.h>
 #include <unistd.h>
-#include <errno.h>
+#include <stdlib.h>
 
 #define MAX_STRING 25
-#define SIZE_BUF 4096
 
 typedef struct {
     char *host_name;
     int port;
     char *path;
-} url_info;
+} infoUrl;
 
-url_info *url_parser(char *url) {
-    url_info *info;
-    if ((info = (url_info *) malloc(sizeof(url_info))) == NULL) {
+infoUrl *parseURL(char *url) {
+    infoUrl *info;
+    if ((info = (infoUrl *) malloc(sizeof(infoUrl))) == NULL) {
         perror("malloc returns NULL");
         exit(1);
     }
@@ -50,11 +48,6 @@ url_info *url_parser(char *url) {
         perror("malloc return NULL");
         exit(1);
     }
-    if ((info->host_name = (char *)
-            malloc(sizeof(char) * (end - start) + 1)) == NULL) {
-        perror("malloc returns NULL");
-        exit(1);
-    }
 
     strncpy(info->host_name, url + start, end - start);
 
@@ -82,18 +75,18 @@ url_info *url_parser(char *url) {
     if (info->path != NULL) {
         printf("Path: %s\n\n\n\n", info->path);
     }
-    else {
+    else  {
         printf("There isn't path\n\n\n\n");
     }
     return info;
 }
 
-char *make_headers(url_info *info) {
+char *makeHeaders(infoUrl *info) {
     char *head;
     int size = strlen(info->host_name) +
-               strlen("Accept: */*\r\n") +
-               strlen("User-Agent: curl/7.58.0\r\n") +
-               strlen("GET  HTTP/1.0\r\nHost: ") + 5;
+            strlen("Accept: */*\r\n") +
+            strlen("User-Agent: curl/7.58.0\r\n") +
+            strlen("GET  HTTP/1.0\r\nHost: ") + 5;
 
     if (info->path != NULL) {
         size += strlen(info->path);
@@ -121,26 +114,22 @@ char *make_headers(url_info *info) {
     strcat(head, "User-Agent: curl/7.58.0\r\n\r\n");
 
     printf("%s\n\n\n", head);
+
     return head;
 }
 
+void cleanUp(struct addrinfo *hints, struct addrinfo *res) {
+    free(hints);
+    freeaddrinfo(res);
+}
+
 void client(char *url) {
-    int socket_fd;
-    char *headers;
     struct addrinfo *hints, *res;
-
-    int result;
-
-    int count_string = 0;
-    int end = 0;
-    int top = 0, down = 0;
-    char buf[SIZE_BUF];
     char str_port[11];
 
-    url_info *info = url_parser(url);
-
+    infoUrl *info = parseURL(url);
     if(info == NULL){
-        fprintf(stderr, "Bad url");
+        perror("bad url");
         return;
     }
 
@@ -150,36 +139,36 @@ void client(char *url) {
 
     snprintf(str_port, 11, "%d", info->port);
 
-    if ((result = getaddrinfo(info->host_name, str_port, hints, &res))) {
-        errno = result;
+    if (getaddrinfo(info->host_name, str_port, hints, &res)) {
         perror("getaddrinfo");
         free(hints);
         return;
     }
 
-    if ((socket_fd = socket(res->ai_family, res->ai_socktype, res->ai_protocol) == -1)) {
+    int socket_fd;
+    if ((socket_fd = socket(res->ai_family, res->ai_socktype, res->ai_protocol)) == -1) {
         perror("socket");
         close(socket_fd);
-        free(hints);
-        freeaddrinfo(res);
+        cleanUp(hints, res);
         return;
     }
 
     if (connect(socket_fd, res->ai_addr, res->ai_addrlen)) {
         perror("connect");
         close(socket_fd);
-        free(hints);
-        freeaddrinfo(res);
+        cleanUp(hints, res);
         return;
     }
 
-    headers = make_headers(info);
+    char *headers;
+    headers = makeHeaders(info);
 
     send(socket_fd, headers, strlen(headers), 0);
 
-    free(hints);
-    freeaddrinfo(res);
+    cleanUp(hints, res);
 
+    int count_string = 0, end = 0, top = 0, down = 0;
+    char buf[BUFSIZ];
     while (1) {
         fd_set reads, writes;
         FD_ZERO(&reads);
@@ -189,11 +178,11 @@ void client(char *url) {
             FD_SET(0, &reads);
         }
 
-        if (top != SIZE_BUF && !end) {
+        if (top != BUFSIZ && !end) {
             FD_SET(socket_fd, &reads);
         }
 
-        result = select(socket_fd + 1, &reads, &writes, NULL, NULL);
+        int result = select(socket_fd + 1, &reads, &writes, NULL, NULL);
 
         if (result < 0) {
             perror("select");
@@ -202,8 +191,8 @@ void client(char *url) {
         }
 
         if (result > 0) {
-            if (top != SIZE_BUF && FD_ISSET(socket_fd, &reads)) {
-                result = recv(socket_fd, buf + top, SIZE_BUF - top, 0);
+            if (top != BUFSIZ && FD_ISSET(socket_fd, &reads)) {
+                result = recv(socket_fd, buf + top, BUFSIZ - top, 0);
 
                 if (result == 0) {
                     end = 1;
@@ -212,8 +201,9 @@ void client(char *url) {
                 if (result == -1) {
                     perror("recv");
                     close(socket_fd);
-                    return;
+                    return; 
                 }
+
                 top += result;
             }
 
@@ -237,6 +227,7 @@ void client(char *url) {
             if (count_string == MAX_STRING) {
                 write(1, "Press Enter to continue", 23);
             }
+
             down += tmp;
         }
 
