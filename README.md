@@ -1,4 +1,3 @@
-![](https://github.com/RunSoFun75/operating-system-labs-1/blob/main/my%20result.png)
 ## Answer without entering a new line
 Напишите программу, которая печатает вопрос и требует односимвольного ответа. Измените атрибуты вашего терминала так, чтобы пользователю не нужно было вводить новую строку после ответа.
 ## Asynchronous I / O
